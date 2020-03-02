@@ -15,7 +15,7 @@ namespace DnsTube
 			var maxAttempts = 3;
 			var attempts = 0;
 			errorMesssage = null;
-			var url = protocol == IpSupport.IPv4 ? "http://ipv4bot.whatismyipaddress.com" : "http://ipv6bot.whatismyipaddress.com";
+			var url = protocol == IpSupport.IPv4 ? "http://v4.ipv6-test.com/api/myip.php" : "http://v6.ipv6-test.com/api/myip.php";
 
 			while (publicIpAddress == null && attempts < maxAttempts)
 			{
@@ -63,7 +63,7 @@ namespace DnsTube
 		{
 			return DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");
 		}
-
+		 
 		public static bool IsValidIpAddress(IpSupport protocol, string ipString)
 		{
 			if (String.IsNullOrWhiteSpace(ipString))

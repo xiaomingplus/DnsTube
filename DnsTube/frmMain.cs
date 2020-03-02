@@ -75,6 +75,7 @@ namespace DnsTube
 				{
 					try
 					{
+						AppendStatusTextThreadSafe($"Start checking for updates");
 						DoUpdate();
 					}
 					finally
@@ -162,7 +163,10 @@ namespace DnsTube
 				}
 				return true;
 			}
-
+			else
+			{
+				AppendStatusTextThreadSafe($"{protocol.ToString()} address has not changed");
+			}
 			return false;
 		}
 
